@@ -1,3 +1,4 @@
+
 {
   "name": "Mahder PharmaLearn",
   "short_name": "Mahder",
@@ -18,14 +19,7 @@
       "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
-        "screenshots": [
-    {
-      "src": "./screenshot1.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow"
-    }
-        ]
     }
   ]
 }
+
