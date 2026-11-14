@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahder PharmaLearn</title>
+<style>
+body{margin:0;font-family:Arial;background:#f1f5f9;color:#172554}
+header{background:#075e54;color:white;padding:25px;text-align:center}
+header h1{margin:5px}
+nav{display:flex;justify-content:center;gap:8px;padding:12px;background:white;flex-wrap:wrap}
+button{background:#087e6b;color:white;border:0;padding:12px;border-radius:8px;cursor:pointer}
+main{padding:18px;max-width:700px;margin:auto}
+.card{background:white;padding:18px;margin:14px 0;border-radius:12px;box-shadow:0 2px 8px #ddd}
+h2{color:#087e6b}
+a{color:#087e6b}
+footer{text-align:center;padding:20px;color:#64748b}
+</style>
+</head>
+<body>
 
+<header>
+<h1>💊 Mahder PharmaLearn</h1>
+<p>Learn Pharmacology Anywhere</p>
+</header>
+
+<nav>
+<button onclick="show('home')">Home</button>
+<button onclick="show('books')">Books</button>
+<button onclick="show('quiz')">Quiz</button>
+<button onclick="show('about')">About</button>
+</nav>
+
+<main id="content">
+<div class="card">
+<h2>Welcome Student!</h2>
+<p>Your free pharmacy learning center.</p>
+<p>Study Pharmacology, read books and test your knowledge.</p>
+</div>
+<div class="card">
+<h2>📚 Free Learning</h2>
+<p>Explore pharmacology resources.</p>
+</div>
+<div class="card">
+<h2>📝 Practice Quiz</h2>
+<p>Test your knowledge every day.</p>
+</div>
+</main>
+
+<footer>
+Mahder PharmaLearn © 2026
+</footer>
+
+<script>
+function show(page){
+let c=document.getElementById('content');
+if(page==='home'){
+c.innerHTML='<div class="card"><h2>Welcome!</h2><p>Learn Pharmacy Anywhere.</p></div>';
+}
+if(page==='books'){
+c.innerHTML=`
+<div class="card">
+<h2>📚 Free Pharmacology Books</h2>
+<p>Open RN Pharmacology for Nurses</p>
+<a href="https://wtcs.pressbooks.pub/pharmacology/">Read Free Book</a>
+<hr>
+<p>NCBI Bookshelf – Medical Learning</p>
+<a href="https://www.ncbi.nlm.nih.gov/books/">Explore Books</a>
+</div>`;
+}
+if(page==='quiz'){
+c.innerHTML=`
+<div class="card">
+<h2>📝 Pharmacology Quiz</h2>
+<p>What is Pharmacology?</p>
+<button onclick="answer(true)">Study of drugs</button>
+<button onclick="answer(false)">Study of plants only</button>
+<p id="result"></p>
+</div>`;
+}
+if(page==='about'){
+c.innerHTML='<div class="card"><h2>About Us</h2><p>Mahder PharmaLearn is an educational platform for pharmacy students and learners.</p><p>Educational use only. Not medical advice.</p></div>';
+}
+}
+function answer(correct){
+document.getElementById('result').innerText=
+correct?'Correct! 🎉':'Try again!';
+}
+</script>
+
+</body>
+  </html>
