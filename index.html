@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#075e54">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mahder PharmaLearn</title>
@@ -87,6 +89,14 @@ document.getElementById('result').innerText=
 correct?'Correct! 🎉':'Try again!';
 }
 </script>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(() => console.log("Offline mode ready"))
+      .catch(err => console.log(err));
+  });
+}
+</script>
 </body>
   </html>
